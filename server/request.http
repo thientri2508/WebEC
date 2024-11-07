@@ -1,0 +1,67 @@
+POST http://localhost:5000/api/products
+Content-Type: application/json
+
+{
+    "name": "QUẦN JEANS XANH TÚI ĐẮP LƯNG THÊU VINTAGE",
+    "description": "This is a sample product.",
+    "price": 545.000,
+    "status": "new",
+    "color": "blue",
+    "material": "jean",
+    "form": "REGULAR",
+    "size_type": "number",
+    "categories": [2, 7],
+    "images": [{"image_url": "sp1.png", "display_order": 1}, {"image_url": "sp1_1.png", "display_order": 2}]
+}
+
+
+###
+
+GET http://localhost:5000/api/categories
+Content-Type: application/json
+
+###
+
+POST http://localhost:5000/api/categories
+Content-Type: application/json
+
+{
+    "name": "thời trang",
+    "parent_id": null
+}
+
+###
+
+PUT http://localhost:5000/api/categories/2
+Content-Type: application/json
+
+{
+    "name": "quần nam",
+    "parent_id": 16
+}
+
+###
+
+DELETE  http://localhost:5000/api/categories/13
+
+###
+POST http://localhost:5000/api/products/setCategory
+Content-Type: application/json
+
+{
+    "category_id": 1,
+    "product_id": "R41L8RJ1"
+}
+
+###
+
+POST http://localhost:5000/api/logs
+Content-Type: application/json
+
+{
+    "userId": 1,
+    "actionType": "user_action",
+    "description": "User logged in",
+    "severity": "info",
+    "source": "user_login"
+}
